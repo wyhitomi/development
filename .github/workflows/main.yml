@@ -1,0 +1,25 @@
+###############################################################################
+# 
+# Filename: main.yml
+# Description: github-actions workflow definition
+# 
+# For more information see:
+#   - https://docs.github.com/en/free-pro-team@latest/actions/guides
+#
+###############################################################################
+
+name: DevOps Project Template
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  build:
+    name: Jobs Example Running on Self-Hosted agents
+    runs-on: [self-hosted, maven, linux]
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
